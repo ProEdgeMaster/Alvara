@@ -16,7 +16,7 @@
 
 ## O que é
 
-O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **OpenBIM/IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
+O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **OpenBIM/IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024**, 71-B/2024** e o **Regulamento eIDAS**.
 
 Suporta múltiplos métodos de assinatura:
 

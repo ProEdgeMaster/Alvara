@@ -2,7 +2,7 @@
 
 <h1>Alvará</h1>
 
-<p><strong>Assinatura e validação digital de ficheiros DWFX para Windows</strong></p>
+<p><strong>Assinatura e validação digital de ficheiros DWFX e IFC para Windows</strong></p>
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
@@ -16,7 +16,9 @@
 
 ## O que é
 
-O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros DWFX (AutoCAD Design Review / Open Packaging Convention) no Windows, com suporte para:
+O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
+
+Suporta múltiplos métodos de assinatura:
 
 | Método | Descrição |
 |---|---|
@@ -24,16 +26,18 @@ O **Alvará** é uma aplicação desktop gratuita para assinar e validar digital
 | **Certificado PFX** | Ficheiro `.pfx` / `.p12` protegido por palavra-passe |
 | **Windows Certificate Store** | Certificados instalados no Windows, incluindo os da app Autenticação.gov |
 
-A assinatura é incorporada no próprio ficheiro DWFX e é compatível com qualquer leitor que suporte o formato OPC/XPS.
+A aplicação suporta tanto o mecanismo nativo **OPC in-place** (para DWFX compatível com Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
 
 ---
 
 ## Funcionalidades
 
-- Assinar ficheiros DWFX com Cartão de Cidadão, PFX ou Windows Certificate Store
-- Validar assinaturas com verificação de revogação em tempo real (OCSP/CRL)
-- Inspecionar certificados de assinatura (sujeito, emissor, validade, número de série)
-- Deteção automática de assinatura ao abrir o ficheiro
+- **Assinatura DWFX**: Suporte nativo OPC e XAdES+ASiC-S
+- **Assinatura IFC**: Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV)
+- **Validação**: Verificação de revogação em tempo real (OCSP/CRL) e integridade
+- **Conformidade Legal**: Preparado para os requisitos dos portais de licenciamento urbanístico (DL 10/2024)
+- **LTV (Long Term Validation)**: Incorporação de provas de não revogação para validação futura offline
+- **TSA Configurável**: Suporte para carimbos do tempo da AMA, Multicert, DigitalSign, etc.
 - Integração com **Enviar Para** do Explorador de Ficheiros
 - Entrada por arrastar e largar (*drag & drop*)
 - Temas claro e escuro (segue as preferências do sistema)
@@ -56,7 +60,7 @@ A assinatura é incorporada no próprio ficheiro DWFX e é compatível com qualq
 
 ### Utilizadores finais
 
-Descarregue o **`Setup.exe`** na [página de releases](../../releases/latest).
+Descarregue o **`Setup.exe`** na página de releases.
 
 O instalador instala automaticamente o .NET 10 Desktop Runtime se necessário, e inclui a opção de instalar o software Autenticação.gov.
 
@@ -64,50 +68,5 @@ O instalador instala automaticamente o .NET 10 Desktop Runtime se necessário, e
 
 Descarregue o **`MSI`** e distribua via Group Policy ou SCCM:
 
-```
+```cmd
 msiexec /i Alvara-x.y.z.msi /qn
-```
-
-### Cartão de Cidadão
-
-Instale o middleware pteid em [autenticacao.gov.pt/cc-aplicacao](https://www.autenticacao.gov.pt/cc-aplicacao).
-
----
-
-## Utilização
-
-### Assinar um ficheiro
-
-1. Abra o ficheiro DWFX — menu **Ficheiro › Abrir DWFX** ou arraste para a janela
-2. Selecione o método de assinatura em **Certificado**
-3. Clique em **Assinar**
-
-### Validar uma assinatura existente
-
-1. Abra um ficheiro DWFX já assinado
-2. Clique no botão **Validar Assinatura**, ou aceda a **Ações › Validar Assinatura**
-3. O resultado é apresentado imediatamente — válido, revogado, expirado ou erro de rede
-
-> A validação consulta os servidores OCSP/CRL da autoridade certificadora e requer ligação à internet (timeout: 15 s).
-
-### Send To — assinar a partir do Explorador
-
-Clique com o botão direito num ficheiro `.dwfx` e escolha **Enviar Para › Assinar com Alvará**.
-
----
-## Dependências
-
-| Pacote | Versão | Licença |
-|---|---|---|
-| [Avalonia UI](https://avaloniaui.net/) | 11.3 | MIT |
-| [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) | 8.2 | MIT |
-| [Aptabase](https://aptabase.com/) | 0.5 | MIT |
-| pteidlib — SDK Cartão de Cidadão | — | AMA / LGPL |
-
----
-
-## Licença
-
-Distribuído sob a licença **MIT** — consulte [LICENSE](LICENSE) para os termos completos.
-
-O utilizador é o único responsável pela validade legal das assinaturas produzidas face à legislação aplicável (Regulamento eIDAS e legislação nacional).

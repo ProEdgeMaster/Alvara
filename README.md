@@ -26,7 +26,7 @@ Suporta múltiplos métodos de assinatura:
 | **Certificado PFX** | Ficheiro `.pfx` / `.p12` protegido por palavra-passe |
 | **Windows Certificate Store** | Certificados instalados no Windows, incluindo os da app Autenticação.gov |
 
-A aplicação suporta tanto o mecanismo nativo **OPC in-place** (para DWFX compatível com Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
+A aplicação suporta tanto o mecanismo nativo Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
 
 ---
 

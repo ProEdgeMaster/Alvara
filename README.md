@@ -2,7 +2,7 @@
 
 <h1>Alvará</h1>
 
-<p><strong>Assinatura e validação digital de ficheiros DWFX e IFC para Windows</strong></p>
+<p><strong>Assinatura e validação digital de ficheiros DWFX e OpenBIM / IFC para Windows</strong></p>
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
@@ -16,7 +16,7 @@
 
 ## O que é
 
-O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
+O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **OpenBIM/IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
 
 Suporta múltiplos métodos de assinatura:
 

@@ -32,7 +32,7 @@ A aplicação suporta tanto o mecanismo nativo Autodesk Design Review) como o fo
 
 ## Funcionalidades
 
-- **Assinatura DWFX**: Suporte nativo OPC e XAdES+ASiC-S
+- **Assinatura DWFX**: Suporte nativo autodesk e XAdES+ASiC-S
 - **Assinatura IFC**: Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV)
 - **Validação**: Verificação de revogação em tempo real (OCSP/CRL) e integridade
 - **Conformidade Legal**: Preparado para os requisitos dos portais de licenciamento urbanístico (DL 10/2024)

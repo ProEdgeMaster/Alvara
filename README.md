@@ -16,9 +16,9 @@
 
 ## O que é
 
-O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
+O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **OpenBIM / IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
 
-Suporta múltiplos métodos de assinatura:
+Suporte a múltiplos métodos de assinatura:
 
 | Método | Descrição |
 |---|---|
@@ -26,19 +26,19 @@ Suporta múltiplos métodos de assinatura:
 | **Certificado PFX** | Ficheiro `.pfx` / `.p12` protegido por palavra-passe |
 | **Windows Certificate Store** | Certificados instalados no Windows, incluindo os da app Autenticação.gov |
 
-A aplicação suporta tanto o mecanismo nativo **OPC in-place** (para DWFX compatível com Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
+A aplicação suporta tanto o mecanismo nativo (para DWFX compatível com Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
 
 ---
 
 ## Funcionalidades
 
-- **Assinatura DWFX**: Suporte nativo OPC e XAdES+ASiC-S
-- **Assinatura IFC**: Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV)
+- **Assinatura DWFX**: Suporte nativo e XAdES+ASiC-S
+- **Assinatura OpenBIM / IFC**: encapsulamento ASiC-S com XAdES-LT (Carimbo do Tempo + LTV)
 - **Validação**: Verificação de revogação em tempo real (OCSP/CRL) e integridade
 - **Conformidade Legal**: Preparado para os requisitos dos portais de licenciamento urbanístico (DL 10/2024)
 - **LTV (Long Term Validation)**: Incorporação de provas de não revogação para validação futura offline
-- **TSA Configurável**: Suporte para carimbos do tempo da AMA, Multicert, DigitalSign, etc.
-- Integração com **Enviar Para** do Explorador de Ficheiros
+- **TSA Configurável**: Suporte para selo temporal AMA / ARTE, Multicert, DigitalSign, etc.
+- Integração com **Enviar Para** do Explorador de Ficheiros Windows
 - Entrada por arrastar e largar (*drag & drop*)
 - Temas claro e escuro (segue as preferências do sistema)
 - Manual do utilizador integrado

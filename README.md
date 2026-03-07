@@ -38,7 +38,7 @@ A aplicação suporta tanto o mecanismo nativo Autodesk Design Review) como o fo
 - **Conformidade Legal**: Preparado para os requisitos dos portais de licenciamento urbanístico (DL 10/2024)
 - **LTV (Long Term Validation)**: Incorporação de provas de não revogação para validação futura offline
 - **TSA Configurável**: Suporte para carimbos do tempo da AMA, Multicert, DigitalSign, etc.
-- Integração com **Enviar Para** do Explorador de Ficheiros
+- Integração com **Enviar Para** do Explorador de Ficheiros Windows
 - Entrada por arrastar e largar (*drag & drop*)
 - Temas claro e escuro (segue as preferências do sistema)
 - Manual do utilizador integrado

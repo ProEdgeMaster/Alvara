@@ -2,7 +2,7 @@
 
 <h1>Alvará</h1>
 
-<p><strong>Assinatura e validação digital de ficheiros DWFX e IFC para Windows</strong></p>
+<p><strong>Assinatura e validação digital de ficheiros DWFX e OpenBIM / IFC para Windows</strong></p>
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>

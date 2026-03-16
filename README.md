@@ -50,7 +50,7 @@ Suporta múltiplos métodos de assinatura:
 
 ### Interface
 
-- Zona de largagem com reconhecimento de todos os formatos suportados
+- Zona de largagem "drop" com reconhecimento de todos os formatos suportados
 - Indicador de progresso durante a conversão de documentos
 - Seletor visível/invisível para assinaturas PDF
 - Temas claro e escuro (segue as preferências do sistema)

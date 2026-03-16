@@ -2,9 +2,10 @@
 
 <h1>Alvará</h1>
 
-<p><strong>Assinatura e validação digital de ficheiros DWFX e OpenBIM / IFC para Windows</strong></p>
+<p><strong>Assinatura e validação digital de ficheiros DWFX, IFC e PDF para Windows</strong></p>
 
 <p>
+  <a href="https://github.com/filipefigueiredo/DWFXSigner/releases/latest"><img src="https://img.shields.io/github/v/release/filipefigueiredo/DWFXSigner?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
   <img src="https://img.shields.io/badge/plataforma-Windows%2010%2F11%20x64-0078D4?logo=windows&logoColor=white" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white" alt=".NET 10">
@@ -16,9 +17,9 @@
 
 ## O que é
 
-O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX** e **OpenBIM / IFC** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
+O **Alvará** é uma aplicação desktop gratuita para assinar e validar digitalmente ficheiros de projeto de construção — **DWFX**, **IFC** e **PDF** — em conformidade com o **DL 10/2024**, a **Portaria 71-A/2024** e o **Regulamento eIDAS**.
 
-Suporte a múltiplos métodos de assinatura:
+Suporta múltiplos métodos de assinatura:
 
 | Método | Descrição |
 |---|---|
@@ -26,23 +27,43 @@ Suporte a múltiplos métodos de assinatura:
 | **Certificado PFX** | Ficheiro `.pfx` / `.p12` protegido por palavra-passe |
 | **Windows Certificate Store** | Certificados instalados no Windows, incluindo os da app Autenticação.gov |
 
-A aplicação suporta tanto o mecanismo nativo (para DWFX compatível com Autodesk Design Review) como o formato **XAdES-LT + ASiC-S** (para IFC e DWFX, garantindo conformidade legal plena e validação a longo prazo).
-
 ---
 
 ## Funcionalidades
 
-- **Assinatura DWFX**: Suporte nativo e XAdES+ASiC-S
-- **Assinatura OpenBIM / IFC**: encapsulamento ASiC-S com XAdES-LT (Carimbo do Tempo + LTV)
-- **Validação**: Verificação de revogação em tempo real (OCSP/CRL) e integridade
-- **Conformidade Legal**: Preparado para os requisitos dos portais de licenciamento urbanístico (DL 10/2024)
-- **LTV (Long Term Validation)**: Incorporação de provas de não revogação para validação futura offline
-- **TSA Configurável**: Suporte para selo temporal AMA / ARTE, Multicert, DigitalSign, etc.
-- Integração com **Enviar Para** do Explorador de Ficheiros Windows
-- Entrada por arrastar e largar (*drag & drop*)
+### Formatos suportados
+
+| Formato | Modo de assinatura |
+|---|---|
+| **DWFX** | Assinatura nativa no pacote (compatível com Autodesk Design Review) ou XAdES-LT + ASiC-S |
+| **IFC** | Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV) |
+| **PDF** | PAdES com assinatura visível (posicionamento livre por página) ou invisível |
+| **DOCX / DOC / ODT** | Convertidos automaticamente para PDF antes de assinar |
+
+### Assinatura e validação
+
+- Validação de revogação em tempo real (OCSP/CRL) com resultado imediato
+- Relatório de validação em PDF para entrega à Câmara Municipal
+- Verificação automática de integridade ao abrir ficheiros
+- LTV — incorporação de provas de não revogação para validação futura offline
+- TSA configurável — AMA, Multicert, DigitalSign, ou qualquer RFC 3161
+
+### Interface
+
+- Zona de largagem com reconhecimento de todos os formatos suportados
+- Indicador de progresso durante a conversão de documentos
+- Seletor visível/invisível para assinaturas PDF
 - Temas claro e escuro (segue as preferências do sistema)
+- Interface disponível em 24 idiomas
+- Integração com **Enviar Para** do Explorador de Ficheiros
 - Manual do utilizador integrado
-- Telemetria anónima opt-in (desativável nas Definições)
+
+### Empresarial
+
+- Registo de auditoria estruturado (ISO 27001 A.8.15)
+- Integração SIEM — NDJSON/CLEF, Syslog UDP/TCP, Windows Event Log
+- Definições cifradas em repouso (Windows DPAPI)
+- Distribuição via MSI / GPO / SCCM
 
 ---
 
@@ -51,7 +72,7 @@ A aplicação suporta tanto o mecanismo nativo (para DWFX compatível com Autode
 | Componente | Versão |
 |---|---|
 | Windows | 10 x64 ou superior |
-| .NET Windows Desktop Runtime | 10.0 — incluído no Setup.exe |
+| .NET Windows Desktop Runtime | 10.0.5 — incluído no Setup.exe |
 | Software Autenticação.gov | Necessário apenas para assinar com Cartão de Cidadão |
 
 ---
@@ -60,9 +81,9 @@ A aplicação suporta tanto o mecanismo nativo (para DWFX compatível com Autode
 
 ### Utilizadores finais
 
-Descarregue o **`Setup.exe`** na página de releases.
+Descarregue o **`Setup.exe`** na [página de releases](../../releases/latest).
 
-O instalador instala automaticamente o .NET 10 Desktop Runtime se necessário, e inclui a opção de instalar o software Autenticação.gov.
+O instalador inclui o .NET 10 Desktop Runtime e a opção de instalar o software Autenticação.gov.
 
 ### Ambientes empresariais (IT / GPO)
 
@@ -72,10 +93,24 @@ Descarregue o **`MSI`** e distribua via Group Policy ou SCCM:
 msiexec /i Alvara-x.y.z.msi /qn
 ```
 
-## ⚖️ Licença
+---
 
-Este projeto é distribuído sob a licença MIT. Consulte o ficheiro LICENSE para mais detalhes.
+## Conformidade legal
+
+As assinaturas produzidas pelo Alvará utilizam:
+
+- **SHA-256** para todos os digests XAdES e PAdES
+- **Carimbos do tempo RFC 3161** de TSA qualificada (AMA por defeito)
+- **OCSP/CRL embebidos** para validação a longo prazo (XAdES-LT / PAdES-LT)
+
+Em conformidade com **DL 10/2024**, **Portaria 71-A/2024**, **Portaria 71-B/2024** e **eIDAS Art. 26 / Art. 42**.
 
 ---
 
-**Aviso Legal**: O Alvará é uma ferramenta técnica. O utilizador é o único responsável pela validade jurídica das assinaturas produzidas face à legislação aplicável.
+## Licença
+
+Distribuído sob a licença MIT. Consulte o ficheiro [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+<sub><strong>Aviso Legal:</strong> O Alvará é uma ferramenta técnica. O utilizador é o único responsável pela validade jurídica das assinaturas produzidas face à legislação aplicável.</sub>

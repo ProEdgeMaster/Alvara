@@ -121,7 +121,7 @@ Distribuído sob a licença MIT. Consulte o ficheiro [LICENSE](LICENSE) para mai
 
 <br>
 
-Feito em Portugal 🇵🇹 · Gratuito e open-source · Licença MIT
+Feito em Portugal 🇵🇹 · Gratuito · Licença MIT
 
 <br>
 

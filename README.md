@@ -5,7 +5,7 @@
 <p><strong>Assinatura e validação digital de ficheiros DWFX, IFC e PDF para Windows</strong></p>
 
 <p>
-  <a href="https://github.com/ProEdgeMaster/Alvara/releases/latest"></a>
+  <a href="https://github.com/filipefigueiredo/DWFXSigner/releases/latest"><img src="https://img.shields.io/github/v/release/filipefigueiredo/DWFXSigner?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
   <img src="https://img.shields.io/badge/plataforma-Windows%2010%2F11%20x64-0078D4?logo=windows&logoColor=white" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white" alt=".NET 10">
@@ -50,7 +50,7 @@ Suporta múltiplos métodos de assinatura:
 
 ### Interface
 
-- Zona de largagem "drop" com reconhecimento de todos os formatos suportados
+- Zona de largagem com reconhecimento de todos os formatos suportados
 - Indicador de progresso durante a conversão de documentos
 - Seletor visível/invisível para assinaturas PDF
 - Temas claro e escuro (segue as preferências do sistema)
@@ -114,3 +114,19 @@ Distribuído sob a licença MIT. Consulte o ficheiro [LICENSE](LICENSE) para mai
 ---
 
 <sub><strong>Aviso Legal:</strong> O Alvará é uma ferramenta técnica. O utilizador é o único responsável pela validade jurídica das assinaturas produzidas face à legislação aplicável.</sub>
+
+---
+
+<div align="center">
+
+<br>
+
+Feito em Portugal 🇵🇹 · Gratuito e open-source · Licença MIT
+
+<br>
+
+<sub>Se o Alvará te poupou tempo ou uma dor de cabeça na Câmara, considera deixar uma ⭐ no repositório — ajuda outros a encontrá-lo.</sub>
+
+<br>
+
+</div>

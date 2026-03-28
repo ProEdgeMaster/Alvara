@@ -5,9 +5,9 @@
 <p><strong>Assinatura e validação digital de ficheiros DWFX, IFC e PDF para Windows</strong></p>
 
 <p>
-  <a href="https://github.com/ProEdgeMaster/Alvara/releases/latest"><img src="https://img.shields.io/github/v/release/ProEdgeMaster/Alvara?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
+  <a href="https://github.com/filipefigueiredo/Alvara/releases/latest"><img src="https://img.shields.io/github/v/release/filipefigueiredo/Alvara?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
-  <img src="https://img.shields.io/badge/plataforma-Windows%2010%2F11%20x64-0078D4?logo=windows&logoColor=white" alt="Windows 10/11 x64">
+  <img src="https://img.shields.io/badge/plataforma-Windows%2010%2F11%20x64%20%7C%20ARM64-0078D4?logo=windows&logoColor=white" alt="Windows 10/11 x64 | ARM64">
   <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white" alt=".NET 10">
 </p>
 
@@ -38,7 +38,9 @@ Suporta múltiplos métodos de assinatura:
 | **DWFX** | Assinatura nativa no pacote (compatível com Autodesk Design Review) ou XAdES-LT + ASiC-S |
 | **IFC** | Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV) |
 | **PDF** | PAdES com assinatura visível (posicionamento livre por página) ou invisível |
-| **DOCX / DOC** | Convertidos automaticamente para PDF antes de assinar |
+| **DOCX / DOC** | Convertidos automaticamente para PDF/A antes de assinar |
+
+> **Ficheiros DWFX para portais de licenciamento:** o modo padrão produz um `.dwfx` compatível com o Autodesk Design Review mas **não conforme** com a Portaria 71-A/2024. Para submissão a portais municipais (Licenciamento Zero, PEPU, etc.), ative **XAdES + ASiC-S** em Ferramentas › Configurações › Segurança — o resultado é um `.asics` com carimbo do tempo qualificado e prova de não revogação incorporada. [Saiba mais →](https://github.com/filipefigueiredo/Alvara/wiki/Modo-Assinatura-DWFX)
 
 ### Assinatura e validação
 
@@ -71,9 +73,9 @@ Suporta múltiplos métodos de assinatura:
 
 | Componente | Versão |
 |---|---|
-| Windows | 10 x64 ou superior |
+| Windows | 10 x64 ou ARM64, ou superior |
 | .NET Windows Desktop Runtime | 10.0.5 — incluído no Setup.exe |
-| Software Autenticação.gov | Necessário apenas para assinar com Cartão de Cidadão |
+| Software Autenticação.gov | Necessário apenas para assinar com Cartão de Cidadão (x64) |
 
 ---
 
@@ -83,14 +85,17 @@ Suporta múltiplos métodos de assinatura:
 
 Descarregue o **`Setup.exe`** na [página de releases](../../releases/latest).
 
-O instalador inclui o .NET 10 Desktop Runtime e a opção de instalar o software Autenticação.gov.
+| Artefacto | Arquitectura | Notas |
+|---|---|---|
+| `Alvara-x.y.z-x64-Setup.exe` | x64 | Inclui .NET 10 Runtime e opção Autenticação.gov |
+| `Alvara-x.y.z-arm64-Setup.exe` | ARM64 | Inclui .NET 10 Runtime; sem Autenticação.gov (CC indisponível em ARM64) |
 
 ### Ambientes empresariais (IT / GPO)
 
 Descarregue o **`MSI`** e distribua via Group Policy ou SCCM:
 
 ```cmd
-msiexec /i Alvara-x.y.z.msi /qn
+msiexec /i Alvara-x.y.z-x64.msi /qn
 ```
 
 ---
@@ -103,7 +108,7 @@ As assinaturas produzidas pelo Alvará utilizam:
 - **Carimbos do tempo RFC 3161** de TSA qualificada (AMA por defeito)
 - **OCSP/CRL embebidos** para validação a longo prazo (XAdES-LT / PAdES-LT)
 
-Em conformidade com **DL 10/2024**, **Portaria 71-A/2024**, e **eIDAS Art. 26 / Art. 42**.
+Em conformidade com **DL 10/2024**, **Portaria 71-A/2024** e **eIDAS Art. 26 / Art. 42**.
 
 ---
 
@@ -121,7 +126,7 @@ Distribuído sob a licença MIT. Consulte o ficheiro [LICENSE](LICENSE) para mai
 
 <br>
 
-Feito em Portugal 🇵🇹 · Gratuito · Licença MIT
+Feito em Portugal 🇵🇹 · Gratuito e open-source · Licença MIT
 
 <br>
 

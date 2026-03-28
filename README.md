@@ -38,7 +38,7 @@ Suporta múltiplos métodos de assinatura:
 | **DWFX** | Assinatura nativa no pacote (compatível com Autodesk Design Review) ou XAdES-LT + ASiC-S |
 | **IFC** | Contentor ASiC-S com XAdES-LT (Carimbo do Tempo + LTV) |
 | **PDF** | PAdES com assinatura visível (posicionamento livre por página) ou invisível |
-| **DOCX / DOC / ODT** | Convertidos automaticamente para PDF antes de assinar |
+| **DOCX / DOC** | Convertidos automaticamente para PDF antes de assinar |
 
 ### Assinatura e validação
 
@@ -103,7 +103,7 @@ As assinaturas produzidas pelo Alvará utilizam:
 - **Carimbos do tempo RFC 3161** de TSA qualificada (AMA por defeito)
 - **OCSP/CRL embebidos** para validação a longo prazo (XAdES-LT / PAdES-LT)
 
-Em conformidade com **DL 10/2024**, **Portaria 71-A/2024**, **Portaria 71-B/2024** e **eIDAS Art. 26 / Art. 42**.
+Em conformidade com **DL 10/2024**, **Portaria 71-A/2024**, e **eIDAS Art. 26 / Art. 42**.
 
 ---
 

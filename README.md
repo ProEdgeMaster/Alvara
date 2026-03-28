@@ -5,7 +5,7 @@
 <p><strong>Assinatura e validação digital de ficheiros DWFX, IFC e PDF para Windows</strong></p>
 
 <p>
-  <a href="https://github.com/filipefigueiredo/Alvara/releases/latest"><img src="https://img.shields.io/github/v/release/filipefigueiredo/Alvara?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
+  <a href="https://github.com/ProEdgeMaster/Alvara/releases/latest"><img src="https://img.shields.io/github/v/release/ProEdgeMaster/Alvara?label=vers%C3%A3o&color=4C6EF5" alt="Última versão"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT"></a>
   <img src="https://img.shields.io/badge/plataforma-Windows%2010%2F11%20x64%20%7C%20ARM64-0078D4?logo=windows&logoColor=white" alt="Windows 10/11 x64 | ARM64">
   <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white" alt=".NET 10">
